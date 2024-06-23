@@ -1,9 +1,8 @@
-import Navigation from "../components/Navigation";
+import Button from "../components/Button";
 
 export default function Home() {
 	return (
 		<div>
-			<Navigation />
 			<div className='container mx-auto'>
 				<h1 className='text-3xl font-light mt-10 w-full md:w-3/4 lg:w-3/4 xl:w-3/4 text-center md:text-start lg:text-start xl:text-start'>
 					I&apos;m Brent Gorwin! I&apos;m a Frontend Engineer with a
@@ -17,6 +16,10 @@ export default function Home() {
 					my projects below and contact me if you want to connect on a
 					job opportunity.
 				</p>
+
+				<div className='mt-10'>
+					<Button href='/contact' buttonText='Contact Me!' />
+				</div>
 			</div>
 		</div>
 	);
