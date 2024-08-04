@@ -48,21 +48,26 @@ export default function Home() {
 	return (
 		<>
 			<div className='container mx-auto px-5'>
-				<h1 className='text-3xl font-light mt-10 w-full md:w-3/4 lg:w-3/4 xl:w-3/4 '>
-					I&apos;m Brent Gorwin! I&apos;m a Frontend Engineer with a
-					passion for building web applications.
-				</h1>
+				<div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3'>
+					<div className='col-span-2'>
+						<h1 className='text-4xl font-light mt-10 '>
+							I&apos;m Brent Gorwin! I&apos;m a Frontend Developer
+							with a passion for building web applications.
+						</h1>
+						<p className='text-lg font-light text-slate-800 mt-4'>
+							I have experience with a variety of technologies,
+							including React, Nextjs and Angular. I&apos;m always
+							looking to learn new things and improve my skills as
+							a developer. Please view my projects below and
+							contact me if you want to connect on a job
+							opportunity.
+						</p>
 
-				<p className='text-lg font-light text-slate-800 mt-4 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 '>
-					I have experience with a variety of technologies, including
-					React, Nextjs and Angular. I&apos;m always looking to learn
-					new things and improve my skills as a developer. Please view
-					my projects below and contact me if you want to connect on a
-					job opportunity.
-				</p>
-
-				<div className='mt-10'>
-					<Button href='#' buttonText='Contact Me!' />
+						<div className='mt-10'>
+							<Button href='#' buttonText='Contact Me!' />
+						</div>
+					</div>
+					<div className='col-span-1'></div>
 				</div>
 			</div>
 
@@ -70,14 +75,13 @@ export default function Home() {
 				<div className='grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4'>
 					<div className='col-span-2'></div>
 					<div className='col-span-2'>
-						<p className='text-3xl font-light'>
-							I have a deep passion for coding and constantly
-							exploring new technologies to stay at the forefront
-							of the industry. In my free time, I enjoy riding
-							motorcycles and capturing moments through
-							photography. These hobbies not only keep me engaged
-							but also inspire my creativity and problem-solving
-							skills.
+						<p className='text-2xl font-light'>
+							I&apos;m constantly exploring new technologies to
+							stay at the forefront of the industry. In my free
+							time, I enjoy riding motorcycles and capturing
+							moments through photography. These hobbies not only
+							keep me engaged but also inspire my creativity and
+							problem-solving skills.
 						</p>
 
 						<div className='mt-10'>
@@ -98,9 +102,9 @@ export default function Home() {
 							<button
 								key={tag}
 								onClick={() => setFilter(tag)}
-								className={`me-5 px-4 py-2 border-2 border-x-gray-900 text-black rounded-full ${
+								className={`me-5 px-4 py-2 border-2 border-x-gray-900 text-black hover:bg-black hover:text-white hover:border-black rounded-full ${
 									filter === tag
-										? "bg-black text-white"
+										? "bg-black text-white "
 										: "bg-white text-black"
 								}`}
 							>
@@ -108,10 +112,32 @@ export default function Home() {
 							</button>
 						))}
 					</div>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 transition duration-500'>
 						{filteredProjects.map((project) => (
 							<ProjectCard key={project.id} {...project} />
 						))}
+					</div>
+				</div>
+			</section>
+
+			<hr className='container mx-auto my-10 bg-zinc-500 h-[2px;] opacity-50' />
+
+			{/* Contact Me Section  */}
+			<section className='bg-black text-white py-10'>
+				<div className='container mx-auto'>
+					<h2 className='text-3xl font-light '>Contact Me</h2>
+					<p className='text-lg font-light  mt-4'>
+						Please feel free to reach out to me if you have any
+						questions or would like to connect on a job opportunity.
+						I am always looking to meet new people and learn new
+						technologies.
+					</p>
+					<div className='mt-10'>
+						<Button
+							buttonText='Contact Me'
+							href='mailto:brent.gorwin@gmail.com'
+							classes='text-white'
+						/>
 					</div>
 				</div>
 			</section>

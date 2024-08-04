@@ -1,6 +1,7 @@
 import Image from "next/image";
 import profileImage from "/public/profile.jpg";
 import Link from "next/link";
+import SocialMediaIcons from "./Social-Media-Icons";
 
 export default function Navigation() {
 	return (
@@ -21,6 +22,9 @@ export default function Navigation() {
 						<p className='text-base text-center'>
 							&copy; Brent Gorwin
 						</p>
+						<div className='mx-auto'>
+							<SocialMediaIcons />
+						</div>
 					</div>
 				</div>
 
